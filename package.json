@@ -1,14 +1,15 @@
 {
   "name": "art_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is an art-based API looking at the works/mediums/etc of the artist Salvator Rosa. Harvard website: https://github.com/harvardartmuseums/api-docs Harvard key: xfebeaa16-0d03-4897-9c68-6b012cec30cd",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "fetch": "^1.1.0",
     "fs": "0.0.1-security",
-    "mongoose": "^5.9.26"
+    "mongoose": "^5.9.26",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/butterfly1of4/art_api/issues"
   },
-  "homepage": "https://github.com/butterfly1of4/art_api#readme"
+  "homepage": "https://github.com/butterfly1of4/art_api#readme",
+  "directories": {
+    "lib": "lib"
+  }
 }
