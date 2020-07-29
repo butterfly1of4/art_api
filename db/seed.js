@@ -1,43 +1,30 @@
 //axios or fetch
-const axios = require('axios').default;
-// const fetch = require("node-fetch");
-const fs = require('fs');
+// const axios = require("axios").default;
+const fetch = require("node-fetch");
+const fs = require("fs");
 
-// q=ulan_id:500011328?
-const url = "https://api.harvardartmuseums.org//person?apikey=febeaa16-0d03-4897-9c68-6b012cec30cd"
+// https://api.harvardartmuseums.org/person?q=culture:Dutch
+//ulan_id:=500011328
+//https://api.harvardartmuseums.org/RESOURCE_TYPE?apikey=YOUR_API_KEY
 
-let works = ''
+const url = "https://api.harvardartmuseums.org/exhibition?apikey=208241b1-775f-4706-8f78-b382d1981b11";
 
-axios.get(url)
-  .then(function (response) {
-    works = JSON.stringify(response)
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(  
-      
-      
+let works = []
+
+fetch(url)
+  .then((res) => res.json())
+  .then((res) => {
+    console.log(res);
+    let works = JSON.stringify(res);
+    console.log(works);
     fs.writeFile("./lib/data.json", works, (err) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("success");
-          }
-        })
-  );
-    
-
-
-
-
-
-
-
-
-
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("success");
+      }
+    });
+  });
 
 // axios.get(url)
 //   .then(function (response) {
@@ -52,10 +39,6 @@ axios.get(url)
 //     // always executed
 //   });
 
-
-
-
-
 // var apiEndpointBaseURL = "https://api.harvardartmuseums.org/object";
 // var queryString = {$.param({
 //     apikey: "xfebeaa16-0d03-4897-9c68-6b012cec30cd",
@@ -64,7 +47,7 @@ axios.get(url)
 // })};
 
 // $.getJSON(apiEndpointBaseURL + "?" + queryString, function(data) {
-//    console.log(data); 
+//    console.log(data);
 // });
 
 // fetch(url)
