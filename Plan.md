@@ -101,3 +101,5 @@ Page needs:
     create 
 
 What goes where
+
+heroku config "mongodb+srv://art-api:harvardAPI@cluster0.udg5y.mongodb.net/<dbname>?retryWrites=true&w=majority"
