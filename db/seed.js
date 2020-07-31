@@ -1,7 +1,5 @@
 const Records = require("../models/Records");
 const data = require("../lib/data.json");
-const newJSON = require("./getRecords")
-
 
 const manyRecords = data.records.map((item) => {
   const record = {};
@@ -15,15 +13,16 @@ const manyRecords = data.records.map((item) => {
   return record;
 });
 
-console.log(manyRecords)
+console.log(manyRecords);
 
 Records.deleteMany({}).then(() => {
-  Records.create(manyRecords).then((records) => {
-    console.log(records);
-    process.exit();
-  })
-  .catch(err => {
-      console.log(err)
-      process.exit()
-  } );
+  Records.create(manyRecords)
+    .then((records) => {
+      console.log(records);
+      process.exit();
+    })
+    .catch((err) => {
+      console.log(err);
+      process.exit();
+    });
 });

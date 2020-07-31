@@ -59,6 +59,20 @@ react: make a fetch request/call to your api- use your heroku url
 -maybe need form element- use this for PUT and DELETE
 -create: have fields for entering POST request
 
+// app.get("/record/title/:title", (req, res) => {
+//   Records.find({ title: req.params.title }).then((records) => {
+//     console.log("everywhere")
+//     res.json(records);
+//   });
+// });
+
+
+
+getRecords:// https://api.harvardartmuseums.org/person?q=culture:Dutch
+//ulan_id:=500011328
+//https://api.harvardartmuseums.org/RESOURCE_TYPE?apikey=YOUR_API_KEY
+
+connections: // mongoose.Promise = Promise
 
 post request is now coming from FORM
 info is the HTTP request body
