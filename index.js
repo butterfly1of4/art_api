@@ -39,7 +39,7 @@ app.post("/record", (req, res) => {
   });
 });
 
-// //UPDATE/PUT REQUESTS
+//UPDATE/PUT REQUESTS
 
 app.put("/record/:id", (req,res) => {
   Records.findByIdAndUpdate({_id: req.params.id},
