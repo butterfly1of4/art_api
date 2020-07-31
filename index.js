@@ -11,15 +11,14 @@ app.get("/", (req, res) => {
 
 app.get("/record", (req, res) => {
   Records.find({}).then((records) => {
-    console.log("first get request")
+    console.log("first get request");
     res.json(records);
   });
 });
 
-
 app.get("/record/_id/:id", (req, res) => {
-  Records.find({_id:req.params.id}).then((record) => {
-    console.log("found id")
+  Records.find({ _id: req.params.id }).then((record) => {
+    console.log("found id");
     res.json(record);
   });
 });
@@ -39,15 +38,23 @@ app.post("/record", (req, res) => {
   });
 });
 
+// //UPDATE/PUT REQUESTS
+
+app.put("/record/:id", (req,res) => {
+  Records.findByIdAndUpdate({_id: req.params.id},
+    req.body,
+    {new:true}).then(record=> {
+      res.json(record)
+    })
+})
+
 //DELETE REQUESTS
-app.delete("/record/_id/:", (req, res) => {
-  Records.findByIdAndRemove({id:req.params.id})
-  .then((records) => {
-    console.log("help me")
+app.delete("/record/:id", (req, res) => {
+  Records.findByIdAndRemove({ _id: req.params.id }).then((records) => {
+    console.log("help me");
     res.json(records);
   });
 });
-
 
 app.listen(3000, () => {
   console.log("listening");

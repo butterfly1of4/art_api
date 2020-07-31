@@ -33,17 +33,7 @@ What is the minimum viable product (MVP)?
 // });
 
 
-// //UPDATE/PUT REQUESTS
-// app.put("/record/:id/item", (req, res) => {
-//   Records.findByIdAndUpdate(
-//     req.params.id,
-//     { $push: { items: req.body } },
-//     { new: true }
-//   ).then((record) => {
-//     console.log("here i am")
-//     res.json(record);
-//   });
-// });
+
 // app.put("/record/:id/classification", (req, res) => {
 //   Records.findByIdAndUpdate(
 //     req.params.id,
