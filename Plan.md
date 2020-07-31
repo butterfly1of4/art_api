@@ -82,6 +82,9 @@ info is the HTTP request body
 download REACT and REACTRouter
 and/or framework
 
+routerdom: this.props.match 
+history too
+
 create app component- then create one button tht shows everything that makes a fetch request to your api 
 
 make POST request to /id etc and body is the information you want to update

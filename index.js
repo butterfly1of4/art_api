@@ -58,6 +58,6 @@ app.listen(app.get("port"), () => {
   console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
 //
-// app.listen(3000, () => {
-//   console.log("listening");
-// });
+app.listen(3000, () => {
+  console.log("listening");
+});
