@@ -1,7 +1,7 @@
 {
   "name": "art_api",
   "version": "1.0.0",
-  "description": "This is an art-based API looking at the works/mediums/etc of the artist Salvator Rosa. Harvard website: https://github.com/harvardartmuseums/api-docs Harvard key: xfebeaa16-0d03-4897-9c68-6b012cec30cd",
+  "description": "This application allows you to look through the works included in the libraries affiliated with Harvard. Harvard website: https://github.com/harvardartmuseums/api-docs Harvard key: xfebeaa16-0d03-4897-9c68-6b012cec30cd",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
@@ -11,11 +11,14 @@
     "fs": "0.0.1-security",
     "mongoose": "^5.9.26",
     "node-fetch": "^2.6.0",
+    "react": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "swagger-ui": "^3.31.1",
     "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node.index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
