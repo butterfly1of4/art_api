@@ -10,7 +10,7 @@ const Schema = mongoose.Schema;
 // })
 const Records = new Schema({
   "title": String,
-  "id": Number,
+  // "id": Number,
   "classification": String,
   "url": String,
   "century": String,
