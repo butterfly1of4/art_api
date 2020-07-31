@@ -72,7 +72,7 @@ getRecords:// https://api.harvardartmuseums.org/person?q=culture:Dutch
 //ulan_id:=500011328
 //https://api.harvardartmuseums.org/RESOURCE_TYPE?apikey=YOUR_API_KEY
 
-connections: // mongoose.Promise = Promise
+
 
 post request is now coming from FORM
 info is the HTTP request body
@@ -85,3 +85,6 @@ and/or framework
 create app component- then create one button tht shows everything that makes a fetch request to your api 
 
 make POST request to /id etc and body is the information you want to update
+
+
+heroku config:set DB_URL="mongodb+srv://art-api:harvardAPI@cluster0.udg5y.mongodb.net/<dbname>?retryWrites=true&w=majority"
