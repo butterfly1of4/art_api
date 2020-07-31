@@ -1,26 +1,59 @@
 import React from 'react';
+import {Route, Link, Redirect} from "react-router-dom"
 import logo from './logo.svg';
 import './App.css';
+import { response } from 'express';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const url =
+  "https://api.harvardartmuseums.org/object?q=culture:Italian&apikey=208241b1-775f-4706-8f78-b382d1981b11";
+
+const entryGet = {
+    method: "GET",
+    headers: {
+        "Accept" : 'data/json'
+    }
+}
+const entryPut = {
+    method: "PUT",
+    headers: {
+        "Accept" : 'data/json'
+    }
+}
+const entryPost = {
+    method: "POST",
+    headers: {
+        "Accept" : 'data/json'
+    }
+}
+const entryDelete = {
+    method: "DELETE",
+    headers: {
+        "Accept" : 'data/json'
+    }
+}
+
+
+
+class App extends Component( ){
+    constructor(props){
+        super(props);
+        this.state = {
+            entry: []
+        } 
+        
+    }
+componentDidMount() {
+    fetch(url) 
+    // then res resjson
+    // then convered 
+    // converted responsethis.setState
+}
+render(){
+    return(
+        <div></div>
+
+    )
+}
 }
 
 export default App;

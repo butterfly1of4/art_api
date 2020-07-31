@@ -1,4 +1,6 @@
+const cors = require("cors")
 const app = require("express")();
+app.use(cors())
 const bodyParser = require("body-parser");
 const Records = require("./models/Records");
 const data = require("./lib/data.json");

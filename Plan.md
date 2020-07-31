@@ -89,5 +89,15 @@ create app component- then create one button tht shows everything that makes a f
 
 make POST request to /id etc and body is the information you want to update
 
+Page needs:
 
-heroku config:set DB_URL="mongodb+srv://art-api:harvardAPI@cluster0.udg5y.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    -navbar - 
+    -form-submit event
+    submit button
+    searchbar
+        -image linked to url
+    find method - submit event
+    title
+    create 
+
+What goes where

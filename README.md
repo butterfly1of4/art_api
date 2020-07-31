@@ -11,6 +11,7 @@ The dependencies needed to run this API are;
     -Mongoose : use:npm `install mongoose`
     -Fetch : `npm install node-fetch`
     -Express : use: `npm install express`
+    -CORS : use `npm insall cors`
 All of them need to be installed and up to date. Use npm to install the other 3. This install will require a knowledge of Node and JavaScript. All of this was done on MacOS, so other interfaces may be different. Chrome was used to build this webpage along with VSC Code using javascript along with NPM to manage dependencies and istall, Mongoose to interface with the database, MongoDB to create a database, and Express to act as the webserver. All calls to the API were made using Fetch.
 
 # **Use and Navigation**
