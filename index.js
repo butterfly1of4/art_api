@@ -2,6 +2,7 @@ const app = require("express")();
 const bodyParser = require("body-parser");
 const Records = require("./models/Records");
 const data = require("./lib/data.json");
+const swagger = require("swagger-ui-express")
 app.use(bodyParser.json());
 
 //GET REQUESTS

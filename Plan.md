@@ -51,3 +51,15 @@ What is the minimum viable product (MVP)?
 get: how routes work
 post: body-object structure
 delete: delete
+
+have create endpoint (create new doc) one read endpont, delete and edit
+
+Frontend to match. 
+react: make a fetch request/call to your api- use your heroku url 
+-maybe need form element- use this for PUT and DELETE
+-create: have fields for entering POST request
+
+
+post request is now coming from FORM
+info is the HTTP request body
+-search: read by id(id/:id etc)
