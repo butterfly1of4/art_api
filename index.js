@@ -17,7 +17,7 @@ app.get("/record", (req, res) => {
   });
 });
 
-//http://localhost:3000/record/_id/
+//http://localhost:3000/record/_id/:idValue
 app.get("/record/_id/:id", (req, res) => {
   Records.find({ _id: req.params.id }).then((record) => {
     res.json(record);

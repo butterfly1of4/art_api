@@ -77,3 +77,11 @@ connections: // mongoose.Promise = Promise
 post request is now coming from FORM
 info is the HTTP request body
 -search: read by id(id/:id etc)
+
+
+download REACT and REACTRouter
+and/or framework
+
+create app component- then create one button tht shows everything that makes a fetch request to your api 
+
+make POST request to /id etc and body is the information you want to update

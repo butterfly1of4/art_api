@@ -13,8 +13,6 @@ const manyRecords = data.records.map((item) => {
   return record;
 });
 
-console.log(manyRecords);
-
 Records.deleteMany({}).then(() => {
   Records.create(manyRecords)
     .then((records) => {
