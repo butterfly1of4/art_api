@@ -103,3 +103,8 @@ Page needs:
 What goes where
 
 heroku config "mongodb+srv://art-api:harvardAPI@cluster0.udg5y.mongodb.net/<dbname>?retryWrites=true&w=majority"
+
+
+
+TO GET MORE: https://api.harvardartmuseums.org/object?size=5&page=42
+add size
