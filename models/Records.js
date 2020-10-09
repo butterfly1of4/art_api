@@ -15,6 +15,7 @@ const Records = new Schema({
   url: String,
   century: String,
   culture: String,
+  primaryimageurl: String,
   medium: String,
   // people: [People]
 });

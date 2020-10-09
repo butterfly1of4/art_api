@@ -9,6 +9,7 @@ const manyRecords = data.records.map((item) => {
   record.url = item.url;
   record.century = item.century;
   record.culture = item.culture;
+  record.primaryimageurl = item.primaryimageurl;
   record.medium = item.medium;
   return record;
 });
