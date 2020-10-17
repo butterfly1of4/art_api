@@ -7,11 +7,12 @@ const data = require("./lib/data.json");
 const swagger = require("swagger-ui-express");
 app.use(bodyParser.json());
 
-//GET REQUESTS
+//SET ROUTE
 app.get("/", (req, res) => {
   res.send("This is a GET route");
 });
 
+//GET ROUTES- ALL
 //http://localhost:3000/record
 app.get("/record", (req, res) => {
   Records.find({}).then((records) => {
@@ -19,6 +20,7 @@ app.get("/record", (req, res) => {
   });
 });
 
+//GET ROUTES-ONE
 //http://localhost:3000/record/_id/:idValue
 app.get("/record/_id/:id", (req, res) => {
   Records.find({ _id: req.params.id }).then((record) => {
