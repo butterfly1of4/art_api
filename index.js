@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 //GET ROUTES- ALL
 //http://localhost:3000/record
-app.get("/record", (req, res) => {
+app.get("/records", (req, res) => {
   Records.find({}).then((records) => {
     res.json(records);
   });
@@ -27,6 +27,13 @@ app.get("/record/_id/:id", (req, res) => {
     res.json(record);
   });
 });
+
+//GET ROUTE-ALL IN CATEGORY
+// app.get("/record/medium/:medium", (req, res) => {
+//   Records.find({ medium: req.params.medium }).then((record) => {
+//     res.json(record);
+//   });
+// });
 
 //POST REQUESTS
 //http://localhost:3000/record/_id/
