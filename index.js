@@ -29,13 +29,14 @@ app.get("/record/_id/:id", (req, res) => {
 });
 
 //GET ROUTE-ALL IN CATEGORY
-// app.get("/record/medium/:medium", (req, res) => {
-//   Records.find({ medium: req.params.medium }).then((record) => {
-//     res.json(record);
-//   });
-// });
+app.get("/record/:title", (req, res) => {
+  Records.find({ title: req.params.title }).then((records) => {
+    res.json(records);
+  });
+});
 
 //POST REQUESTS
+//CREATE
 //http://localhost:3000/record/_id/
 
 app.post("/record", (req, res) => {
