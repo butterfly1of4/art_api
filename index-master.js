@@ -8,19 +8,27 @@ const swagger = require("swagger-ui-express");
 app.use(bodyParser.json());
 
 //GET REQUESTS
-// app.get("/", (req, res) => {
-//   res.send("This is a GET route");
-// });
+app.get("/", (req, res) => {
+  res.send("This is a GET route");
+});
 
-//GETALL
 //http://localhost:3000/record
 app.get("/record", (req, res) => {
-  Records.find({}).then((record) => {
+  Records.find({}).then((records) => {
+    res.json(records);
+  });
+});
+
+//http://localhost:8080/record/_id/:idValue
+app.get("/record/_id/:id", (req, res) => {
+  Records.find({ _id: req.params.id }).then((record) => {
     res.json(record);
   });
 });
 
 //GET TITLE
+//http://localhost:8080/record/title/:title
+
 app.get("/record/title/:title", (req,res ) => {
   Records.find({title: req.params.title})
   .then((record) => {
@@ -28,16 +36,8 @@ app.get("/record/title/:title", (req,res ) => {
   })
 })
 
-//GET ONE
-//http://localhost:3000/record/_id/:idValue
-// app.get("/record/_id/:id", (req, res) => {
-//   Records.find({ _id: req.params.id }).then((record) => {
-//     res.json(record);
-//   });
-// });
-
-//POST/CREATE REQUESTS
-//http://localhost:3000/record/_id/
+//POST REQUESTS
+//http://localhost:8080/create_record
 
 app.post("/create_record", (req, res) => {
   Records.create(req.body).then((record) => {
@@ -47,33 +47,18 @@ app.post("/create_record", (req, res) => {
 
 //UPDATE/PUT REQUESTS
 //http://localhost:3000/record/_'anyId'/
-// app.put("/record/:id", (req, res) => {
-//   Records.findByIdAndUpdate({ _id: req.params.id }, req.body, {
-//     new: true,
-//   }).then((record) => {
-//     res.json(record);
-//   });
-// });
-app.put("/record/:url", (req, res) => {
-  Records.findByIdAndUpdate({url: req.params.url}, req.body, {
-    new: true})
-    .then((record) => {
+app.put("/record/:id", (req, res) => {
+  Records.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+    new: true,
+  }).then((record) => {
     res.json(record);
   });
 });
-// app.put("/record/:id/item/:item", (req, res) => {
-//   Records.findByIdAndUpdate(req.params.id,
-//     { $push: {items: req.body}},
-//     {new: true})
-//     .then((record) => {
-//     res.json(record);
-//   });
-// });
 
 //DELETE REQUESTS
 //http://localhost:3000/record/_'anyId'/
 app.delete("/record/:id", (req, res) => {
-  Records.findOneAndDelete({ _id: req.params.id }).then((records) => {
+  Records.findByIdAndRemove({ _id: req.params.id }).then((records) => {
     res.json(records);
   });
 });

@@ -16,18 +16,19 @@ All of them need to be installed and up to date. Use npm to install the other 3.
 
 # **Use and Navigation**
 **GET: and POST**
-To open the API, open your browser to: (localhost:3000/record) 
-                                        <!-- (https://rocky-hamlet-98173.herokuapp.com/record) -->
+To open the API, open your browser to: (localhost:8080/record) 
+
+                                      <!-- (https://rocky-hamlet-98173.herokuapp.com/record) -->
 
 This should give you a list of the works contained in the API. It also allows you to add to the API. 
 
-To search by ID: (localhost:3000/record/_id/ID_NUBMER_HERE)
+To search by ID: (localhost:8080/record/_id/ID_NUBMER_HERE)
                 <!-- (https://rocky-hamlet-98173.herokuapp.com/record/_id/idValue) -->
 
 **DELETE and PUT**
 Entries can be updated and deleted using the same _id number;
 
-(localhost:3000/record/_ID-NUMBER)
+(localhost:8080/record/_ID-NUMBER)
 <!-- (https://rocky-hamlet-98173.herokuapp.com/record/_idValue) -->
 
 <em>
@@ -50,3 +51,9 @@ The full Harvard API can be found:
 The full collection at can be viewed online at [Harvard Art Museums](https://www.harvardartmuseums.org/)
 
 
+#### Note: 
+to reseed local database: 
+```node db/seed.js```
+
+To re-deploy to heroku: 
+```
