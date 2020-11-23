@@ -36,6 +36,14 @@ app.get("/record/title/:title", (req,res ) => {
   })
 })
 
+//GET RANK
+//http://localhost:8080/record/:rank
+app.get("/record/:rank", (req, res) => {
+  Records.find({ rank: req.params.rank }).then((record) => {
+    res.json(record);
+  });
+});
+
 //POST REQUESTS
 //http://localhost:8080/create_record
 

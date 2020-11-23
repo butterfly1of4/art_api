@@ -1,11 +1,25 @@
-const cors = require("cors")
+const cors = require("cors");
 const app = require("express")();
-app.use(cors())
+app.use(cors());
 const bodyParser = require("body-parser");
 const Records = require("./models/Records");
 const data = require("./lib/data.json");
 const swagger = require("swagger-ui-express");
 app.use(bodyParser.json());
+
+
+// app.use((req,res,next) => {
+//   res.header("Access-Control-Allow-Origin","*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   )
+//   if (req.method === "OPTIONS"){
+//     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET")
+//     return res.status(200).json({})
+//   }
+//   next()
+// })
 
 //GET REQUESTS
 // app.get("/", (req, res) => {
@@ -19,22 +33,26 @@ app.get("/record", (req, res) => {
     res.json(record);
   });
 });
-
+//GET ID
+app.get("/record/id/:id", (req, res) => {
+  Records.find({ _id: req.params.id }).then((record) => {
+    res.json(record);
+  });
+});
 //GET TITLE
-app.get("/record/title/:title", (req,res ) => {
-  Records.find({title: req.params.title})
-  .then((record) => {
-    res.json(record)
-  })
-})
+app.get("/record/title/:title", (req, res) => {
+  Records.find({ title: req.params.title }).then((record) => {
+    res.json(record);
+  });
+});
 
 //GET ONE
 //http://localhost:3000/record/_id/:idValue
-// app.get("/record/_id/:id", (req, res) => {
-//   Records.find({ _id: req.params.id }).then((record) => {
-//     res.json(record);
-//   });
-// });
+app.get("/record/:rank", (req, res) => {
+  Records.find({ rank: req.params.rank }).then((record) => {
+    res.json(record);
+  });
+});
 
 //POST/CREATE REQUESTS
 //http://localhost:3000/record/_id/
@@ -54,9 +72,11 @@ app.post("/create_record", (req, res) => {
 //     res.json(record);
 //   });
 // });
-app.put("/record/:url", (req, res) => {
-  Records.findByIdAndUpdate({url: req.params.url}, req.body, {
-    new: true})
+app.put("/record/:id", (req, res) => {
+  Records.findByIdAndUpdate(
+    {_id:req.params.id},
+    req.body,
+    { new: true })
     .then((record) => {
     res.json(record);
   });
@@ -73,8 +93,8 @@ app.put("/record/:url", (req, res) => {
 //DELETE REQUESTS
 //http://localhost:3000/record/_'anyId'/
 app.delete("/record/:id", (req, res) => {
-  Records.findOneAndDelete({ _id: req.params.id }).then((records) => {
-    res.json(records);
+  Records.findByIdAndDelete({ _id: req.params.id }).then((record) => {
+    res.json(record);
   });
 });
 

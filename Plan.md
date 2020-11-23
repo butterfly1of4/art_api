@@ -1,3 +1,6 @@
+to reseed database: node db/seed.js
+
+
 What is the minimum viable product (MVP)?
     -express & mongoose
     -one model

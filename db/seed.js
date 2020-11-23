@@ -4,7 +4,7 @@ const data = require("../lib/data.json");
 const manyRecords = data.records.map((item) => {
   const record = {};
   record.title = item.title;
-  record.id = item.id;
+  record.rank = item.rank;
   record.classification = item.classification;
   record.url = item.url;
   record.century = item.century;

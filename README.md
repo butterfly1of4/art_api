@@ -1,5 +1,4 @@
-# art_api
-# Harvard Art Search API
+# Harvard Art API
 
 
 This application allows you to look through the works included in the libraries affiliated with Harvard. These inclue the Fogg Museum, Busch-Reisinger Museum and Arthur M. Sackler Museum.  
