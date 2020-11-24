@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 const Records = require("./models/Records");
 const data = require("./lib/data.json");
 const swagger = require("swagger-ui-express");
+const { title } = require("process");
 app.use(bodyParser.json());
-
 
 // app.use((req,res,next) => {
 //   res.header("Access-Control-Allow-Origin","*");
@@ -63,29 +63,52 @@ app.post("/create_record", (req, res) => {
   });
 });
 
+//POST/CREATE/UPDATE ONE
+app.post("/record/:id/:title", (res,req) =>{
+  Records.findByIdAndUpdate(req.params.id,
+    {$push:{record:req.body}},
+    {new:true}).then(record => {
+      res.json(record)
+    })
+})
+
 //UPDATE/PUT REQUESTS
+//UPDATE BY ID
 //http://localhost:3000/record/_'anyId'/
-// app.put("/record/:id", (req, res) => {
-//   Records.findByIdAndUpdate({ _id: req.params.id }, req.body, {
-//     new: true,
-//   }).then((record) => {
-//     res.json(record);
-//   });
-// });
 app.put("/record/:id", (req, res) => {
-  Records.findByIdAndUpdate(
-    {_id:req.params.id},
-    req.body,
-    { new: true })
-    .then((record) => {
+  Records.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+    new: true,
+  }).then((record) => {
     res.json(record);
   });
 });
-// app.put("/record/:id/item/:item", (req, res) => {
+
+//UPDATE/PUT BY TITLE
+app.put("/record/:id/item", (req, res) => {
+  Records.findByIdAndUpdate(
+    {"_id":req.params.id, "items._id":req.params.itemID},
+    {$set: {'items.$.title':req.body.title}}
+    .then(record => {
+      res.json(record)
+    })
+)})
+// app.put("record/:id/item", (req,res)=>{
 //   Records.findByIdAndUpdate(req.params.id,
-//     { $push: {items: req.body}},
+//     {$push: {title: req.params.title}},
+//     req.body,
 //     {new: true})
-//     .then((record) => {
+//     console.log("true")
+//     .then(record => {
+//       res.json(record)
+//     })
+// })
+// app.put("record/:id/title/:title", (req, res) => {
+//   Records.findOneAndUpdate(
+//     req.params.title,
+//     { $push: {title: req.body}},
+//     {new: true})
+//     console.log(title)
+//     .then(record => {
 //     res.json(record);
 //   });
 // });
