@@ -11,7 +11,7 @@
     "fetch": "^1.1.0",
     "fs": "0.0.1-security",
     "mongoose": "^5.9.26",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "react": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "semantic-ui-css": "^2.4.1",
