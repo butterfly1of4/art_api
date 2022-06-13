@@ -4,7 +4,7 @@
   "description": "This application allows you to look through the works included in the libraries affiliated with Harvard. Harvard website: https://github.com/harvardartmuseums/api-docs Harvard key: xfebeaa16-0d03-4897-9c68-6b012cec30cd",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
